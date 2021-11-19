@@ -1,0 +1,13 @@
+/* MIXINS */
+
+
+// Screens
+@mixin big-screens {
+    @media ( min-width: 1000px ) { @content }
+}
+
+
+// Properties
+$margin-large: 50px;
+$margin-medium: 10px;
+

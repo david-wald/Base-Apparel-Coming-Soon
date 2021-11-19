@@ -1,0 +1,123 @@
+// BASE
+@use "./base/reset";
+
+// ABSTRACTS
+@use "./abstracts/colors";
+@use "./abstracts/mixins";
+
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    
+    
+
+    @include mixins.big-screens {
+        background: url('../images/bg-pattern-desktop.svg')
+    }
+}
+
+
+header {
+    margin-bottom: mixins.$margin-large;
+
+    .logo {
+        width: 100px;
+        margin: 27.5px;
+    }
+
+    .hero-image {
+        
+
+    }
+}
+
+
+.main-content {
+    max-width: 310px;
+    margin: 0 auto;
+    text-align: center;
+   
+    .heading {
+        font-size: 40px;
+        letter-spacing: 10px;
+        line-height: 1.1;
+        text-transform: uppercase;
+        color: colors.$dark-grayish-red;
+        margin-bottom: mixins.$margin-medium;
+
+        &__span {
+            color: colors.$desaturated-red;
+            font-weight: 100;
+        }
+    }
+
+
+    .message {
+        color: colors.$desaturated-red;
+        line-height: 1.4;
+        padding: 5px;
+        margin-bottom: mixins.$margin-medium;
+    }
+
+
+    form {
+
+        .email-input {
+            font-family: inherit;
+            width: 100%;
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+            color: colors.$desaturated-red;
+            padding-left: 25px;
+        }
+           
+        button {
+            width: 70px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+            background: colors.$button;
+            position: relative;
+            top: -50px;
+            right: -119px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: ease-in .2s all;
+
+            &:hover {
+                background: colors.$button-hover;
+                box-shadow:  0 5px 10px 3px colors.$desaturated-red;
+            }
+            
+           .error {
+          
+               position: absolute;
+               left: -30px;
+           }
+        }
+    }
+}
+
+
+footer {
+    position: relative;
+    top: 55px;
+    text-align: center;
+
+    .attribution {
+        color: colors.$dark-grayish-red;
+
+       a {
+           color: colors.$soft-red;
+           font-weight: 600;
+       }
+    }
+}
+
+
+
