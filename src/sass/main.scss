@@ -95,7 +95,7 @@ header {
             }
             
            .error {
-          
+               display: none;
                position: absolute;
                left: -30px;
            }
@@ -106,8 +106,9 @@ header {
 
 footer {
     position: relative;
-    top: 55px;
+    top: 50px;
     text-align: center;
+    padding-bottom: 5px;
 
     .attribution {
         color: colors.$dark-grayish-red;
