@@ -7,44 +7,72 @@
 
 
 body {
+
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 14px;
-    
+    font-size: 15px;
     
 
-    @include mixins.big-screens {
-        background: url('../images/bg-pattern-desktop.svg')
+    @include mixins.laptop {
+       
+        display: grid;
+        grid-template-columns: 150px 1fr 1fr;
+        grid-template-rows: 230px 360px 200px;
     }
 }
 
 
-header {
-    margin-bottom: mixins.$margin-large;
+.logo {
+    width: 100px;
+    margin: 27.5px;
 
-    .logo {
-        width: 100px;
-        margin: 27.5px;
+    @include mixins.laptop {
+        grid-column: 2 / 3;
+        width: 145px;
+        margin: 60px 0 0 0;
     }
 
-    .hero-image {
-        
+}
 
+
+.hero-image {
+    width: 100%;
+    
+    margin-bottom: mixins.$margin-large;
+
+    @include mixins.laptop {
+       
+        grid-column: 3 / 4;
     }
 }
 
 
 .main-content {
-    max-width: 310px;
+    max-width: 325px;
     margin: 0 auto;
     text-align: center;
+
+    @include mixins.laptop {
+        grid-column: 2 / 3;
+        margin: 0;
+        text-align: left;
+        max-width: 400px;
+    }
+
    
     .heading {
+
         font-size: 40px;
         letter-spacing: 10px;
-        line-height: 1.1;
+        line-height: 1.05;
         text-transform: uppercase;
         color: colors.$dark-grayish-red;
-        margin-bottom: mixins.$margin-medium;
+        margin-bottom: 25px;
+
+        
+
+        @include mixins.laptop {
+           font-size: 50px;
+        }
 
         &__span {
             color: colors.$desaturated-red;
@@ -55,9 +83,9 @@ header {
 
     .message {
         color: colors.$desaturated-red;
-        line-height: 1.4;
-        padding: 5px;
-        margin-bottom: mixins.$margin-medium;
+        line-height: 1.8;
+      /*   padding: 5px; */
+        margin-bottom: 40px;
     }
 
 
@@ -81,13 +109,18 @@ header {
             background: colors.$button;
             position: relative;
             top: -50px;
-            right: -119px;
+            right: -130px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             position: relative;
             cursor: pointer;
             transition: ease-in .2s all;
+
+            @include mixins.laptop {
+                width: 100px;
+                right: -300px;
+             }
 
             &:hover {
                 background: colors.$button-hover;
@@ -105,17 +138,28 @@ header {
 
 
 footer {
-    position: relative;
-    top: 50px;
-    text-align: center;
-    padding-bottom: 5px;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+
+    padding-bottom: 3px;
+
+    @include mixins.laptop {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        align-self: end;
+        justify-self: center;
+    }
+    
+
+   
 
     .attribution {
         color: colors.$dark-grayish-red;
 
        a {
            color: colors.$soft-red;
-           font-weight: 600;
+           font-weight: 300;
        }
     }
 }

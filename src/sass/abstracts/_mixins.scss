@@ -2,12 +2,12 @@
 
 
 // Screens
-@mixin big-screens {
+@mixin laptop {
     @media ( min-width: 1000px ) { @content }
 }
 
 
 // Properties
 $margin-large: 50px;
-$margin-medium: 10px;
+$margin-medium: 25px;
 
