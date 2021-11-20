@@ -3,11 +3,13 @@
 
 // Screens
 @mixin laptop {
-    @media ( min-width: 1000px ) { @content }
+    @media ( min-width: 992px ) { @content }
 }
 
 
-// Properties
+// MARGINS
+$margin-xlarge: 60px;
 $margin-large: 50px;
-$margin-medium: 25px;
+$margin-medium: 40px;
+$margin-small: 25px;
 

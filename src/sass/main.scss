@@ -6,8 +6,9 @@
 @use "./abstracts/mixins";
 
 
-body {
 
+body {
+  
     font-family: 'Josefin Sans', sans-serif;
     font-size: 15px;
     
@@ -28,7 +29,7 @@ body {
     @include mixins.laptop {
         grid-column: 2 / 3;
         width: 145px;
-        margin: 60px 0 0 0;
+        margin: mixins.$margin-xlarge 0 0 0;
     }
 
 }
@@ -36,6 +37,7 @@ body {
 
 .hero-image {
     width: 100%;
+    
     
     margin-bottom: mixins.$margin-large;
 
@@ -66,7 +68,7 @@ body {
         line-height: 1.05;
         text-transform: uppercase;
         color: colors.$dark-grayish-red;
-        margin-bottom: 25px;
+        margin-bottom: mixins.$margin-small;
 
         
 
@@ -84,8 +86,7 @@ body {
     .message {
         color: colors.$desaturated-red;
         line-height: 1.8;
-      /*   padding: 5px; */
-        margin-bottom: 40px;
+        margin-bottom: mixins.$margin-medium;
     }
 
 
@@ -138,10 +139,9 @@ body {
 
 
 footer {
-    font-size: 11px;
+    font-size: 12px;
     display: flex;
     justify-content: center;
-
     padding-bottom: 3px;
 
     @include mixins.laptop {
@@ -149,17 +149,14 @@ footer {
         grid-column: 2 / 3;
         align-self: end;
         justify-self: center;
+        font-size: 16px;
     }
     
-
-   
-
     .attribution {
         color: colors.$dark-grayish-red;
 
        a {
            color: colors.$soft-red;
-           font-weight: 300;
        }
     }
 }
