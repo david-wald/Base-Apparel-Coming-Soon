@@ -93,6 +93,8 @@ body {
 
     form {
 
+        position: relative; /* To position error message */
+
         .email-input {
             font-family: inherit;
             width: 100%;
@@ -101,6 +103,7 @@ body {
             border: 1px solid #ddd;
             color: colors.$desaturated-red;
             padding-left: 25px;
+            
         }
            
         button {
@@ -129,12 +132,31 @@ body {
                 box-shadow:  0 5px 10px 3px colors.$desaturated-red;
             }
             
-           .error {
+           .error-sign-hidden {
                display: none;
                position: absolute;
                left: -30px;
            }
+
+           .error-sign-visible {
+                display: inline-block;
+           }
         }
+    }
+
+    .error-message-hidden {
+        display: none;
+        position: absolute;
+        color: red;
+        font-size: 14px;
+        font-weight: 600;
+        bottom: 0;
+        bottom: 27px;
+        left: 27px;
+    }
+
+    .error-message-visible {
+        display: block;
     }
 }
 
@@ -147,7 +169,7 @@ footer {
 
     @include mixins.laptop {
         grid-row: 3 / 4;
-        grid-column: 2 / 3;
+        grid-column: 1 / 4;
         align-self: end;
         justify-self: center;
         font-size: 16px;

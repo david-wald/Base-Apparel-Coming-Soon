@@ -3,7 +3,7 @@
 
 <head>
 
-  <script src="./js/app.js" defer></script>
+  <script src="./js/app.js" defer type="module"></script>
   <link rel="stylesheet" href="./sass/main.scss">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,10 +37,12 @@
     <form action="">
       <input type="email" placeholder="Email Address" class="email-input">
 
-      <button><img src="./images/icon-error.svg" alt="error sign" class="error">
+      <button class="button"><img src="./images/icon-error.svg" alt="error sign" class="error-sign-hidden">
         <img src="./images/icon-arrow.svg" alt="arrow image" class="arrow"></button>
-
+      <p class="error-message-hidden">Please provide a valid email</p>
     </form>
+
+
 
   </main>
 

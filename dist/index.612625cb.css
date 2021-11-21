@@ -12,10 +12,11 @@ a {
 
 /* MIXINS */
 body {
+  overflow-x: hidden;
   font-family: "Josefin Sans", sans-serif;
   font-size: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 997px) {
   body {
     display: grid;
     grid-template-columns: 150px 1fr 1fr;
@@ -27,7 +28,7 @@ body {
   width: 100px;
   margin: 27.5px;
 }
-@media (min-width: 992px) {
+@media (min-width: 997px) {
   .logo {
     grid-column: 2/3;
     width: 145px;
@@ -39,7 +40,7 @@ body {
   width: 100%;
   margin-bottom: 50px;
 }
-@media (min-width: 992px) {
+@media (min-width: 997px) {
   .hero-image {
     grid-column: 3/4;
   }
@@ -50,7 +51,7 @@ body {
   margin: 0 auto;
   text-align: center;
 }
-@media (min-width: 992px) {
+@media (min-width: 997px) {
   .main-content {
     grid-column: 2/3;
     margin: 0;
@@ -66,7 +67,7 @@ body {
   color: #413a3a;
   margin-bottom: 25px;
 }
-@media (min-width: 992px) {
+@media (min-width: 997px) {
   .main-content .heading {
     font-size: 50px;
   }
@@ -79,6 +80,10 @@ body {
   color: #ce9797;
   line-height: 1.8;
   margin-bottom: 40px;
+}
+.main-content form {
+  position: relative;
+  /* To position error message */
 }
 .main-content form .email-input {
   font-family: inherit;
@@ -105,7 +110,7 @@ body {
   cursor: pointer;
   transition: ease-in 0.2s all;
 }
-@media (min-width: 992px) {
+@media (min-width: 997px) {
   .main-content form button {
     width: 100px;
     right: -300px;
@@ -115,10 +120,26 @@ body {
   background: linear-gradient(135deg, #f8bfbf, #f8bfbf);
   box-shadow: 0 5px 10px 3px #ce9797;
 }
-.main-content form button .error {
+.main-content form button .error-sign-hidden {
   display: none;
   position: absolute;
   left: -30px;
+}
+.main-content form button .error-sign-visible {
+  display: inline-block;
+}
+.main-content .error-message-hidden {
+  display: none;
+  position: absolute;
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+  bottom: 0;
+  bottom: 27px;
+  left: 27px;
+}
+.main-content .error-message-visible {
+  display: block;
 }
 
 footer {
@@ -127,10 +148,10 @@ footer {
   justify-content: center;
   padding-bottom: 3px;
 }
-@media (min-width: 992px) {
+@media (min-width: 997px) {
   footer {
     grid-row: 3/4;
-    grid-column: 2/3;
+    grid-column: 1/4;
     align-self: end;
     justify-self: center;
     font-size: 16px;
