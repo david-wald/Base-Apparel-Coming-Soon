@@ -23,30 +23,41 @@ body {
 }
 
 
-.logo {
-    width: 100px;
-    margin: 27.5px;
+header {
 
     @include mixins.laptop {
         grid-column: 2 / 3;
-        width: 145px;
-        margin: mixins.$margin-xlarge 0 0 0;
-    }
-
-}
-
-
-.hero-image {
-    width: 100%;
-    
-    
-    margin-bottom: mixins.$margin-large;
-
-    @include mixins.laptop {
        
-        grid-column: 3 / 4;
+    }
+
+    .logo {
+        width: 100px;
+        margin: 27.5px;
+    
+        @include mixins.laptop {
+            width: 145px;
+            margin: mixins.$margin-xlarge 0 0 0;
+        }
+    
     }
 }
+
+
+.banner {
+    margin-bottom: mixins.$margin-large;
+    @include mixins.laptop {
+        grid-row: 1 / 4;
+        grid-column: 3 / 4;
+        margin-bottom: 0;
+    }
+
+    .hero-image {
+        display: block;
+        width: 100%;
+       
+    }
+}
+
 
 
 .main-content {
