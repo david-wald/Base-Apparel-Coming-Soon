@@ -8,7 +8,7 @@
 
 
 body {
-    overflow-x: hidden;
+   /*  overflow-x: hidden; */
   
     font-family: 'Josefin Sans', sans-serif;
     font-size: 15px;
@@ -17,8 +17,8 @@ body {
     @include mixins.laptop {
        
         display: grid;
-        grid-template-columns: 150px 1fr 1fr;
-        grid-template-rows: 230px 360px 200px;
+        grid-template-columns: 150px minmax(450px, auto) 500px;
+        grid-template-rows: 190px 460px 100px;
     }
 }
 
@@ -35,7 +35,7 @@ header {
         margin: 27.5px;
     
         @include mixins.laptop {
-            width: 145px;
+            width: 150px;
             margin: mixins.$margin-xlarge 0 0 0;
         }
     
@@ -43,18 +43,26 @@ header {
 }
 
 
-.banner {
+.hero {
     margin-bottom: mixins.$margin-large;
+    
+   
+
     @include mixins.laptop {
-        grid-row: 1 / 4;
         grid-column: 3 / 4;
-        margin-bottom: 0;
+        grid-row: 1 / 4;
+        margin: 0;
+        /* height: 100vh; */
+        
+  
     }
 
-    .hero-image {
+    &__image {
         display: block;
         width: 100%;
-       
+        max-height: 100%;
+        object-fit: contain;
+        
     }
 }
 
@@ -69,14 +77,14 @@ header {
         grid-column: 2 / 3;
         margin: 0;
         text-align: left;
-        max-width: 400px;
+        max-width: 450px;
     }
 
    
     .heading {
 
         font-size: 40px;
-        letter-spacing: 10px;
+        letter-spacing: 15px;
         line-height: 1.05;
         text-transform: uppercase;
         color: colors.$dark-grayish-red;
@@ -85,7 +93,7 @@ header {
         
 
         @include mixins.laptop {
-           font-size: 50px;
+           font-size: 60px;
         }
 
         &__span {
@@ -98,7 +106,7 @@ header {
     .message {
         color: colors.$desaturated-red;
         line-height: 1.8;
-        margin-bottom: mixins.$margin-medium;
+        margin-bottom: 25px;
     }
 
 
@@ -108,8 +116,8 @@ header {
 
         .email-input {
             font-family: inherit;
-            width: 100%;
-            height: 50px;
+            width: 90%;
+            height: 60px;
             border-radius: 50px;
             border: 1px solid #ddd;
             color: colors.$desaturated-red;
@@ -119,13 +127,13 @@ header {
            
         button {
             width: 70px;
-            height: 50px;
+            height: 60px;
             border: none;
             border-radius: 50px;
             background: colors.$button;
             position: relative;
-            top: -50px;
-            right: -130px;
+            top: -60px;
+            right: -110px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -135,7 +143,7 @@ header {
 
             @include mixins.laptop {
                 width: 100px;
-                right: -300px;
+                right: -305px;
              }
 
             &:hover {
